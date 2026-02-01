@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "meddies-ocr"
+version = "0.1.0"
+description = "Distillation of Qwen3 to Chandra using GOLD and UDL methods."
+authors = ["Bao Tran <trannguyenduybao152@gmail.com>"]
+packages = [{include = "src"}]
+
+[tool.poetry.dependencies]
+python = ">=3.10"
+torch = ">=2.0.0"
+transformers = ">=4.38.0"
+modal = ">=0.60.0"
+pydantic = ">=2.0.0"
+trl = ">=0.8.0"
+torchvision = ">=0.15.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "*"
+flake8 = "*"
+pytest = "*"
+pytest-cov = "*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q --cov=src"
+testpaths = [
+    "tests",
+]
+pythonpath = [
+    "src"
+]
